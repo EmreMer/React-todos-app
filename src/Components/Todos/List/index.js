@@ -1,20 +1,39 @@
 import { useState } from 'react'
 
-function List({ todos }) {
+function List({ todos, filteredTodos, updateCompleteTodos, removeTodos }) {
   const [click, setClick] = useState(todos)
+
 
 
   return (
     <div>
+
       <ul className="todo-list">
-        {todos.map((todo, i) => (
-          <li key={i}>
-            <input name="done" className="toggle" type="checkbox" />
-            {todo.newTodo}
-            <button className="destroy" mv-action="delete(todo)"  ></button>
-          </li>
-        ))}
+        {
+          filteredTodos.map((todos, i) => (
+            <li key={i}
+              className={todos.complete ? 'completed' : undefined}>
+              <div className="view">
+                <input
+                  className="toggle"
+                  type="checkbox"
+                  checked={todos.complete}
+                  onChange={() => updateCompleteTodos(todos.newTodo)}
+                />
+                <label
+                  className="borderbottom">
+                  {todos.newTodo}
+                </label>
+                <button
+                  className="destroy"
+                  onClick={() => removeTodos(todos.newTodo)}
+                />
+              </div>
+            </li>
+          ))
+        }
       </ul>
+
 
     </div>
   )

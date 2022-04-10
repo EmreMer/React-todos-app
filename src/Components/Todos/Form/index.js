@@ -8,6 +8,7 @@ function Form({ addTodos, todos }) {
 
     useEffect(() => {
         setForm(initialFormValues)
+
     }, [todos])
 
 
@@ -24,7 +25,11 @@ function Form({ addTodos, todos }) {
         console.log(form);
 
         addTodos([...todos, form])
+
     }
+    useEffect(() => {
+        localStorage.setItem("todos", JSON.stringify(todos))
+    }, [todos])
 
     return (
         <form onSubmit={onSubmit}>

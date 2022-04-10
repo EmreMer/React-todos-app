@@ -1,22 +1,39 @@
 import React from 'react'
 
-function Buttons({ todos }) {
+function Buttons({ todos, addTodos, activeTodos, setActiveTodos, filteredTodos }) {
+    const clearItems = () => {
+        addTodos([]);
+    };
     return (
         <div>
 
-            <label>{todos.length} items left </label>
-            <button>
-                All
-            </button>
-            <button>
-                Active
-            </button>
-            <button>
-                Completed
-            </button>
+            <span className="todo-count"><strong>{filteredTodos.length}</strong> items left </span>
+
+            <ul className="filters">
+                <li>
+                    <a
+                        onClick={(e) => { setActiveTodos("All") }}
+                        className={activeTodos === "All" ? 'selected' : undefined}
+                    >All</a>
+                </li>
+                <li>
+                    <a
+                        onClick={(e) => { setActiveTodos("Active") }}
+                        className={activeTodos === "Active" ? 'selected' : undefined}
+                    >Active</a>
+                </li>
+                <li>
+                    <a
+                        onClick={(e) => { setActiveTodos("Completed") }}
+                        className={activeTodos === "Completed" ? 'selected' : undefined}
+                    >Completed</a>
+                </li>
+            </ul>
+
+
             <button
                 className="clear-completed"
-                mv-action="delete(todo where done)">
+                onClick={clearItems}>
                 Clear completed
             </button>
             <p>Click to edit a todo</p>
