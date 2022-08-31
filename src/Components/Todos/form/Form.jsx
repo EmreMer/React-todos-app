@@ -32,17 +32,20 @@ function Form({ addTodos, todos }) {
     }, [todos])
 
     return (
-        <form onSubmit={onSubmit}>
-            <div>
-                <input
-                    name="newTodo"
-                    className="new-todo"
-                    placeholder="What needs to be done?"
-                    value={form.newTodo}
-                    onChange={onChangeInput}
-                />
-            </div>
-        </form>
+        <header class="header">
+            <h1>todos</h1>
+            <form onSubmit={onSubmit}>
+                <div>
+                    <input
+                        name="newTodo"
+                        className="new-todo"
+                        placeholder="What needs to be done?"
+                        value={form.newTodo}
+                        onChange={onChangeInput}
+                    />
+                </div>
+            </form>
+        </header>
     )
 }
 

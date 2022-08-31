@@ -1,7 +1,7 @@
 import { useState } from 'react'
-import List from "./List";
-import Form from "./Form";
-import Buttons from "./Buttons";
+import List from "./Todos/list/List";
+import Form from "./Todos/form/Form";
+import Buttons from "./Todos/buttons/Button";
 
 function Todos() {
     const [todos, setTodos] = useState([
@@ -46,8 +46,8 @@ function Todos() {
         setTodos(newTodos);
     }
     return (
-        <div>
-            <h1>todos</h1>
+        <section class="todoapp">
+
             <Form
                 addTodos={setTodos}
                 todos={todos} />
@@ -68,7 +68,7 @@ function Todos() {
 
             />
 
-        </div>
+        </section>
     )
 }
 

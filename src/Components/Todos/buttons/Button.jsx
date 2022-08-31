@@ -5,7 +5,7 @@ function Buttons({ todos, addTodos, activeTodos, setActiveTodos, filteredTodos }
         addTodos([]);
     };
     return (
-        <div>
+        <footer class="footer">
 
             <span className="todo-count"><strong>{filteredTodos.length}</strong> items left </span>
 
@@ -36,10 +36,12 @@ function Buttons({ todos, addTodos, activeTodos, setActiveTodos, filteredTodos }
                 onClick={clearItems}>
                 Clear completed
             </button>
-            <p>Click to edit a todo</p>
-            <p>Created by <a href="https://d12n.me/">Dmitry Sharabin</a></p>
-            <p>Part of <a href="http://todomvc.com">TodoMVC</a></p>
-        </div>
+            <footer className="info">
+                <p>Click to edit a todo</p>
+                <p>Created by <a href="https://d12n.me/">Dmitry Sharabin</a></p>
+                <p>Part of <a href="http://todomvc.com">TodoMVC</a></p>
+            </footer>
+        </footer>
     )
 }
 

@@ -1,7 +1,7 @@
-import { useState } from 'react'
+
 
 function List({ todos, filteredTodos, updateCompleteTodos, removeTodos }) {
-  const [click, setClick] = useState(todos)
+
 
 
 
