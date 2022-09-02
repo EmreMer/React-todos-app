@@ -19,7 +19,6 @@ function Buttons({
       <ul className="filters">
         <li>
           <a
-            href="#"
             onClick={(e) => {
               setActiveTodos("All");
             }}
@@ -30,7 +29,6 @@ function Buttons({
         </li>
         <li>
           <a
-            href="#"
             onClick={(e) => {
               setActiveTodos("Active");
             }}
@@ -41,7 +39,6 @@ function Buttons({
         </li>
         <li>
           <a
-            href="#"
             onClick={(e) => {
               setActiveTodos("Completed");
             }}
